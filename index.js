@@ -1,29 +1,29 @@
-// Code your solution in this file!
-const  returnFirstTwoDrivers = function (drivers){
-    drivers = ['Antonia', 'Nuru', 'Amari', 'Mo'];
-    return drivers.slice(0,2)
+ // Code your solution in this file!
+let drivers = ['Antonia', 'Nuru', 'Amari', 'Mo'];
+
+const returnFirstTwoDrivers = function(drivers){
+    return drivers.slice(0 , 2);
 }
+console.log(returnFirstTwoDrivers(drivers));
 
-const returnLastTwoDrivers = function (drivers){
-    drivers =['Antonia', 'Nuru', 'Amari', 'Mo']
-    return drivers.splice(-2)
-}
+const returnLastTwoDrivers =(drivers) =>  drivers.slice(-2)
 
-const selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers]
+const  selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers]
 
-
-
-function createFareMultiplier (num){
-    function multiplyFare(fare){
-         fare * num;
+function createFareMultiplier (integer){
+    return function (fare){
+        return fare * integer;
     }
-    
-    return multiplyFare
+
 }
-const fareDoubler = createFareMultiplier()
-const  fareTripler = createFareMultiplier()
+const fareDoubler = createFareMultiplier(2)
+console.log(fareDoubler()); 
 
-function selectDifferentDrivers(one,two)
+const fareTripler = createFareMultiplier(3)
+console.log(fareTripler());
 
-let pink  = returnLastTwoDrivers()
-console.log(selectingDrivers);
+function selectDifferentDrivers (drivers, callback){
+    return callback(drivers)
+}
+
+console.log(selectDifferentDrivers(drivers,returnFirstTwoDrivers));
